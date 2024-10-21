@@ -1,0 +1,29 @@
+.thanks__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+    position: relative;
+}
+
+.thanks-content__inner {
+    position: absolute;
+}
+
+.thanks__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.home__button {
+    margin-top: 30px;
+}
+
+.home__button-link {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    background-color: #82756A;
+    color: #fff;
+    cursor: pointer;
+}
