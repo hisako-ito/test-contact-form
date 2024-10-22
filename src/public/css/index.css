@@ -41,6 +41,7 @@ h2 {
     font-weight: normal;
     text-align: center;
     margin: 0 auto;
+    font-size: 25px;
 }
 
 .form {
@@ -95,11 +96,16 @@ h2 {
 
 .form__input--text input,
 .form__input--textarea textarea {
+    margin: 0;
     padding: 10px 20px;
     width: 600px;
     border: none;
+    border-radius: 0;
     background-color: #F4F4F4;
+    outline: none;
     color: #BEB1A6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
 }
 
@@ -227,7 +233,7 @@ select {
 }
 
 select:invalid {
-    color: #BEB1A6;
+    color: #D7D0CA;
 }
 
 /* 選択した後も1つめの初期値の色を変える */
@@ -256,11 +262,10 @@ select option {
 .form__button-submit {
     padding: 10px;
     width: 15%;
-    font-size: 18px;
+    font-size: 17px;
     height: 50px;
     border: none;
     background-color: #82756A;
     color: #fff;
-    font-family: none;
     cursor: pointer;
 }
