@@ -1,35 +1,54 @@
+* {
+    box-sizing: border-box
+}
+
 .header {
-    background: #fff;
+    border-bottom: 1px solid #E0DFDE;
 }
 
 .header__inner {
     margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+    max-width: 1512px;
+    height: 100px;
+    padding: 30px 0;
 }
 
 .header__logo {
-    color: #8B7969;
-    font-size: 24px;
     font-family: "Inika", serif;
-    font-weight: 400;
-    font-style: normal;
+    color: #8B7969;
+    font-size: 30px;
+    margin: 0;
+    font-weight: normal;
+    padding: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .confirm__content {
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
-}
-
-.confirm__heading {
-    margin-bottom: 40px;
+    max-width: 1512px;
     text-align: center;
 }
 
-.form {
+.confirm__heading {
+    margin: 0px auto;
+}
+
+h2 {
+    font-family: "Inika", serif;
+    color: #8B7969;
+    font-weight: normal;
+    text-align: center;
     margin: 0 auto;
-    width: 70%;
+    font-size: 25px;
+}
+
+.form {
+    margin: 30px auto;
+    width: 65%;
+    text-align: center;
 }
 
 .confirm-table {
@@ -41,41 +60,66 @@
 }
 
 .confirm-table__header {
-    padding: 15px;
-    width: 20%;
+    padding: 10px 30px;
+    width: 30%;
     border-bottom: 1px solid #E0DFDE;
     background-color: #BAA899;
     color: #fff;
+    text-align: left;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .confirm-table__text {
-    padding: 15px;
+    padding: 10px 30px;
     border-bottom: 1px solid #E0DFDE;
-    color: #8B7969;
 }
 
-.confirm-table__text input {
+input,
+textarea {
+    padding: 0;
     width: 100%;
     outline: none;
     border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #8B7969;
+    font-size: 16px;
 }
 
-.confirm-table__row:last-child .confirm-table__header,
-.confirm-table__row:last-child .confirm-table__text {
-    border-bottom-width: 0;
+.confirm-table__text--last-name {
+    width: 50%;
+    padding: 0 0 0 10px;
+}
+
+.confirm-table__text--first-name {
+    width: 50%;
+    text-align: left;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
 }
 
 .form__button {
     margin-top: 30px;
-    text-align: center;
+    text-align: center
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
-    height: 50px;
+    margin: 0 30px 0 0;
+    width: 10%;
+    font-size: 17px;
     border: none;
-    background: #82756A;
+    background-color: #82756A;
     color: #fff;
     cursor: pointer;
+}
+
+.form__button-correct {
+    color: #8B7969;
 }
