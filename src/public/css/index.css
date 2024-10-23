@@ -50,21 +50,27 @@ h2 {
     text-align: center;
 }
 
+.form__item {
+    margin: 0 auto;
+}
+
 .form__group {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
+    height: 40px;
 }
 
 .form__group-title {
     padding: 0 25px;
+    text-align: left;
+    vertical-align: top;
 }
 
 .form__label--item {
     font-size: 17px;
     color: #8B7969;
-    text-align: left;
+    /* text-align: left; */
     font-weight: 500;
 }
 
@@ -81,17 +87,32 @@ h2 {
 }
 
 .form__error {
-    height: 20px;
+    height: 40px;
     color: #ff0000;
     text-align: left;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.form__error ul {
+    padding: 0;
+    margin: 0;
+    margin: 0;
+    display: flex;
+}
+
+.form__error li {
+    padding: 0px 20px;
+    list-style:none
 }
 
 .form__group-content {
     width: 65%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
     align-items: center;
-    margin: 0 0;
+    text-align: center;
 }
 
 .form__input--text input,
@@ -111,7 +132,8 @@ h2 {
 
 .form__input--text--name {
     display: flex;
-    display: space-between;
+    /* display: space-between; */
+    margin: 0;
 }
 
 .form__input--text--name input {
@@ -120,7 +142,7 @@ h2 {
     background-color: #F4F4F4;
     color: #BEB1A6;
     margin: 0 25px 0 0;
-    height: 40px;
+    /* height: 40px; */
     padding: 10px 20px;
 }
 
@@ -128,7 +150,7 @@ h2 {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    height: 40px;
+    /* height: 40px; */
     margin: 0 0;
 }
 
@@ -246,22 +268,19 @@ select option {
     color: #BEB1A6;
 }
 
-.form__input--text input {
-    height: 40px;
-}
-
 .form__input--textarea textarea {
-    height: 130px;
     resize: none;
+    height: 100px;
 }
 
 .form__button {
     margin-top: 30px;
+    text-align: center;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 15%;
+    width: 160px;
     font-size: 17px;
     height: 50px;
     border: none;

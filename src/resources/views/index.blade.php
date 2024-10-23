@@ -39,7 +39,14 @@
                             <input type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}">
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('last_name')
+                                <li>{{ $message }}</li>
+                                @enderror
+                                @error('first_name')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -64,7 +71,9 @@
                             </label>
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                                @error('gender')
+                                <li>{{ $message }}</li>
+                                @enderror
                         </div>
                     </div>
                 </div>
@@ -78,7 +87,11 @@
                             <input type="email" name="email" id="email" placeholder="例: test@example.com" value="{{ old('email') }}">
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('email')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -89,14 +102,25 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text--tel">
-                            <input type="tel" name="tell_left" id="tell" placeholder="090" value="">
+                            <input type="tel" name="tell_left" id="tell" placeholder="090" value="{{ old('tell_left') }}">
                             <span>-</span>
-                            <input type="tel" name="tell_middle" placeholder="1234" value="">
+                            <input type="tel" name="tell_middle" placeholder="1234" value="{{ old('tell_middle') }}">
                             <span>-</span>
-                            <input type="tel" name="tell_right" placeholder="5678" value="">
+                            <input type="tel" name="tell_right" placeholder="5678" value="{{ old('tell_right') }}">
+                            <input type="hidden" name="tell">
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('tell_left')
+                                <li>{{ $message }}</li>
+                                @enderror
+                                @error('tell_middle')
+                                <li>{{ $message }}</li>
+                                @enderror
+                                @error('tell_right')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -110,7 +134,11 @@
                             <input type="text" name="address" id="address" placeholder="例: 東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}">
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('address')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -122,9 +150,6 @@
                     <div class="form__group-content">
                         <div class="form__input--text">
                             <input type="text" name="building" id="building" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}">
-                        </div>
-                        <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
                         </div>
                     </div>
                 </div>
@@ -140,8 +165,13 @@
                                     <option value="">サンプル</option>
                                 </select>
                         </div>
+                        <br />
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('category_id')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -152,12 +182,17 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--textarea">
-                            <textarea name="detail" id="detail" placeholder="お問い合わせ内容をご記載ください" value="{{ old('tel') }}"></textarea>
+                            <textarea name="detail" id="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            <ul>
+                                @error('detail')
+                                <li>{{ $message }}</li>
+                                @enderror
+                            </ul>
                         </div>
                     </div>
+                </div>
                 </div>
 
                 <div class="form__button">
@@ -165,7 +200,6 @@
                 </div>
 
             </form>
-        </div>
     </main>
 </body>
 
