@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FashionablyLate</title>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+@extends('layouts.app')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-</head>
+@endsection
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <span class="header__logo">
-                FashionablyLate
-            </span>
-        </div>
-    </header>
-
-    <main>
+@section('content')
         <div class="confirm__content">
             <div class="confirm__heading">
                 <h2>Confirm</h2>
@@ -43,7 +26,7 @@
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">性別</th>
                             <td class="confirm-table__text">
-                                <input type="radio" name="gender" value="{{ $contact['gender'] }}" readonly>
+                                <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
                             </td>
                         </tr>
 
@@ -57,7 +40,8 @@
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">電話番号</th>
                             <td class="confirm-table__text">
-                                <input type="tel" name="tell" value="{{ $tell }}" readonly>
+                                <input type="test" name="tell" value="{{ $tell }}" readonly>
+                                <input type="hidden" name="tell" value="{{ $contact['tell'] }}">
                             </td>
                         </tr>
 
@@ -86,6 +70,7 @@
                             <th class="confirm-table__header">お問い合わせ内容</th>
                             <td class="confirm-table__text">
                                 <textarea type="text" name="detail" readonly>{{ $contact['detail'] }}</textarea>
+                                <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
                             </td>
                         </tr>
                     </table>
@@ -96,7 +81,4 @@
                 </div>
             </form>
         </div>
-    </main>
-</body>
-
-</html>
+@endsection

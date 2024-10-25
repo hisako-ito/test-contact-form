@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FashionablyLate</title>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+@extends('layouts.app')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-</head>
+@endsection
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <h1 class="header__logo">
-                FashionablyLate
-            </h1>
-        </div>
-    </header>
-
-    <main>
+@section('content')
         <div class="contact-form__content">
             <div class="contact-form__heading">
                 <h2>Contact</h2>
@@ -58,15 +41,15 @@
                     <div class="form__group-content">
                         <div class="form__input--radio">
                             <label for="male">
-                                <input type="radio" name="gender" id="male" value="男性" checked>
+                                <input type="radio" name="gender" id="male" value="1" checked>
                                 <span>男性</span>
                             </label>
                             <label for="female">
-                                <input type="radio" name="gender" id="female"value="女性">
+                                <input type="radio" name="gender" id="female"value="2">
                                 <span>女性</span>
                             </label>
                             <label for="other">
-                                <input type="radio" name="gender" id="other" value="その他">
+                                <input type="radio" name="gender" id="other" value="3">
                                 <span>その他</span>
                             </label>
                         </div>
@@ -107,17 +90,10 @@
                             <input type="tel" name="tell_middle" placeholder="1234" value="{{ old('tell_middle') }}">
                             <span>-</span>
                             <input type="tel" name="tell_right" placeholder="5678" value="{{ old('tell_right') }}">
-                            <input type="hidden" name="tell">
                         </div>
                         <div class="form__error">
                             <ul>
-                                @error('tell_left')
-                                <li>{{ $message }}</li>
-                                @enderror
-                                @error('tell_middle')
-                                <li>{{ $message }}</li>
-                                @enderror
-                                @error('tell_right')
+                                @error('tell')
                                 <li>{{ $message }}</li>
                                 @enderror
                             </ul>
@@ -162,7 +138,9 @@
                         <div class="form__input--select">
                                 <select name="category_id" required>
                                     <option value="">選択してください</option>
-                                    <option value="">サンプル</option>
+                                        @foreach ($categories as $category)
+                                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                                        @endforeach
                                 </select>
                         </div>
                         <br />
@@ -200,7 +178,5 @@
                 </div>
 
             </form>
-    </main>
-</body>
-
-</html>
+        </div>
+@endsection
