@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ContactRequest extends FormRequest
 {
@@ -24,18 +25,24 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
+            'tell' => [new DateRule($this->left_tell,$this->tell_middle,$this->tell_right,)],
             'last_name' => ['required'],
             'first_name' => ['required'],
             'gender' => ['required'],
-            'email' => ['required','email'],
-            'tell_left' => ['required'],
-            'tell' => ['numeric'],
-            'tell' => ['min:5'],
+            'email' => ['required', 'email'],
+            'tell' => ['required', 'min:5'],
             'address' => ['required'],
-            // 'building' => ['nullabel'],
             'category_id' => ['required'],
-            'detail' => ['required', 'max:120']
+            'detail' => ['required','max:120']
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'tell' => $this->input('tell_left').$this->input('tell_middle').
+            $this->input('tell_right'),
+        ]);
     }
 
     public function messages()
@@ -50,8 +57,8 @@ class ContactRequest extends FormRequest
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
 
-            'tell_left.required' => '電話番号を入力してください',
-            'tell.numeric' => '電話番号は5桁までの数字で入力してください',
+            'tell.required' => '電話番号を入力してください',
+            'tell.integer' => '電話番号は5桁までの数字で入力してください',
             'tell.min' => '電話番号は5桁までの数字で入力してください',
 
             'address.required' => '住所を入力してください',
@@ -59,7 +66,8 @@ class ContactRequest extends FormRequest
             'category_id.required' => 'お問い合わせの種類を選択してください',
 
             'detail.required' => 'お問い合わせ内容を入力してください',
-            'detail.max' => 'お問合せ内容は120文字以内で入力してください',
+            'detail.max' => 'お問合せ内容は120文字以内で入力してください'
         ];
     }
+
 }

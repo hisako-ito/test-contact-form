@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box
+}
+
+.header {
+    border-bottom: 1px solid #E0DFDE;
+}
+
+.header__inner {
+    margin: 0 auto;
+    max-width: 1512px;
+    height: 100px;
+    padding: 30px 0;
+}
+
+.header__logo {
+    font-family: "Inika", serif;
+    color: #8B7969;
+    font-size: 30px;
+    margin: 0;
+    font-weight: normal;
+    padding: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
