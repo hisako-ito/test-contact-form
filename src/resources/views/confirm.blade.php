@@ -63,7 +63,7 @@
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">お問い合わせの種類</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="category_id" value="{{$contact->getContactType(category_id)}}" readonly>
+                                <input type="text" name="category_id" value="{{ $contact['category_id'] }}" readonly>
                             </td>
                         </tr>
 

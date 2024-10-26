@@ -45,7 +45,7 @@
                                 <span>男性</span>
                             </label>
                             <label for="female">
-                                <input type="radio" name="gender" id="female"value="2">
+                                <input type="radio" name="gender" id="female" value="2">
                                 <span>女性</span>
                             </label>
                             <label for="other">
@@ -139,7 +139,7 @@
                                 <select name="category_id" required>
                                     <option value="">選択してください</option>
                                         @foreach ($categories as $category)
-                                        <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                                        <option value="{{ $category['id'] }}" @if(old('category_id') == $category['id']) selected @endif>{{ $category['content'] }}</option>
                                         @endforeach
                                 </select>
                         </div>
