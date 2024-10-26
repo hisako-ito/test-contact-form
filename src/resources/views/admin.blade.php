@@ -70,7 +70,7 @@
                         <div class="search__form-nav--export-button">
                             <button>エクスポート</button>
                         </div class="search__form-nav--pagination">
-                            <div>ページネーション</div>
+                            <div>{{ $contacts->links('vendor.pagination.bootstrap-4') }}</div>
                         </div>
                     </div>
                 </form>

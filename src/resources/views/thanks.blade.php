@@ -19,7 +19,7 @@
                 <h2>お問い合わせありがとうございました</h2>
             </div>
             <div class="home__button">
-                <button class="home__button-link" href="/">HOME</button>
+                <button class="home__button-link" onclick="location.href='./'">HOME</button>
             </div>
         </div>
     </main>

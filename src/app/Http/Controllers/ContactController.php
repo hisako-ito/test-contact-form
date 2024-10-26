@@ -7,6 +7,7 @@ use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
+
 class ContactController extends Controller
 {
     //お問い合わせフォーム表示
@@ -20,19 +21,20 @@ class ContactController extends Controller
     //入力内容確認ページの表示
     public function confirm(ContactRequest $request)
     {
+        $contact = Contact::with('category')->get();
+        $categories = Category::all();
         $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tell', 'address', 'building', 'category_id', 'detail']);
 
         $full_name = $request->input('last_name') .  "  " . $request->input('first_name');
 
         $tell = $request->input('tell_left') .  $request->input('tell_middle') .  $request->input('tell_right');
 
-        return view('confirm', compact('contact','tell', 'full_name'));
+        return view('confirm', compact('contact','tell', 'full_name', 'categories'));
     }
 
     //完了ページの表示
     public function store(Request $request)
     {
-        // $tell = $request->input('tell_left') .  $request->input('tell_middle') .  $request->input('tell_right');
         $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tell', 'address', 'building', 'category_id', 'detail']);
 
         Contact::create($contact);

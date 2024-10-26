@@ -185,6 +185,16 @@ select option {
     color: #8B7969;
 }
 
-.search-table__header--detail {
-    visibility: hidden
+/* .search-table__header--detail { */
+    /* visibility: hidden */
+/* } */
+
+    /* svg.w-5.h-5 { */
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    /* width: 30px; */
+    /* height: 30px; */
+    /* } */
+
+.search__form-nav--pagination {
+    display: inline-block;
 }

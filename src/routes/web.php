@@ -23,6 +23,6 @@ Route::post('/thanks', [ContactController::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']);
 });
-// Route::post('/register',[AuthController::class,'store']);
-// Route::post('/login',[AuthController::class,'store']);
-// Route::post('/logout',[AuthController::class,'destroy']);
+
+// Route::post('/register', [AuthController::class, 'store']);
+// Route::post('/login', [AuthController::class, 'login']);
