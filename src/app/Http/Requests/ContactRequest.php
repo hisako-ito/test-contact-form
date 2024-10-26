@@ -22,10 +22,12 @@ class ContactRequest extends FormRequest
      *
      * @return array
      */
+
+    
+
     public function rules()
     {
         return [
-            'tell' => [new DateRule($this->left_tell,$this->tell_middle,$this->tell_right,)],
             'last_name' => ['required'],
             'first_name' => ['required'],
             'gender' => ['required'],
@@ -39,9 +41,10 @@ class ContactRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->merge([
-            'tell' => $this->input('tell_left').$this->input('tell_middle').
-            $this->input('tell_right'),
+    $this->merge([
+        'tell' => $this->input('tell_left').
+                        $this->input('tell_middle').
+                        $this->input('tell_right'),
         ]);
     }
 

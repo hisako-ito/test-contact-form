@@ -212,7 +212,8 @@ select {
     clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
-.form__input--select select {
+.search-form__item-gender select,
+.search-form__item-category select{
     width: 100%;
     padding: 10px 45px 10px 10px;
     cursor: pointer;
